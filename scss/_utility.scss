@@ -1,0 +1,45 @@
+/* ------------------------------------- */
+/* Utility classes */
+/* ------------------------------------- */
+
+.container {
+  max-width: 1032px;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+.bottom-line {
+  width: 4rem;
+  border-bottom: 4px solid $blue-color;
+}
+.meta {
+  font-weight: 100;
+  font-size: 0.8rem;
+}
+
+// Logo
+.logo {
+  text-align: center;
+  font-weight: 900;
+  font-size: 2rem;
+  padding: 1.5rem 0 0.5rem 0;
+  h1 {
+    line-height: 1;
+  }
+  .dot {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: $blue-color;
+    border-radius: 50%;
+  }
+  .thin {
+    font-weight: 100;
+    font-size: 2rem;
+  }
+}
+
+.text-blue{
+    color: $blue-color;
+    font-size: .8rem;
+}

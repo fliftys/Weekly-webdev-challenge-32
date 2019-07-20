@@ -1,0 +1,13 @@
+{
+  "name": "weekly_webdev_challenge",
+  "version": "1.0.0",
+  "description": "psd to html",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "scss": "node-sass -w scss/ -o dist/css -r"
+  },
+  "author": "",
+  "license": "ISC"
+}

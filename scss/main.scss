@@ -1,0 +1,361 @@
+@import "config";
+@import "utility";
+
+/* ------------------------------------- */
+/* Global */
+/* ------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Catamaran", sans-serif;
+  color: $dark-color;
+}
+
+a {
+  text-decoration: none;
+  color: $dark-color;
+  transition: color 0.2s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-transform: uppercase;
+}
+
+/* ------------------------------------- */
+/* Header */
+/* ------------------------------------- */
+
+#main-header {
+  // Sub-header
+  .sub-header {
+    background: $dark-color;
+    color: #fff;
+
+    // Sub-header content -> flex
+    &-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .links {
+        display: flex;
+
+        li {
+          a {
+            display: block;
+            padding: 1rem;
+            color: #fff;
+            transition: color 0.2s ease;
+
+            &:hover {
+              color: $blue-color;
+            }
+          }
+        }
+      }
+
+      .socials {
+        display: flex;
+
+        li {
+          margin-right: 0.5rem;
+          a {
+            font-size: 1.2rem;
+            display: block;
+            color: #fff;
+            transition: color 0.2s ease;
+
+            &:hover {
+              color: $blue-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Nav
+  #main-nav {
+    border-bottom: 2px solid #b3b3b3;
+
+    // main-nav-content
+    .main-nav-content {
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: bold;
+        li {
+          transition: color 0.2s ease;
+          cursor: pointer;
+
+          &.current {
+            border-bottom: 5px solid $blue-color;
+          }
+          &:hover,
+          &:hover a {
+            color: $blue-color;
+          }
+          a {
+            display: block;
+            padding: 0.5rem;
+          }
+        }
+
+        li.roll {
+          position: relative;
+
+          &:hover ul.unroll {
+            display: block;
+          }
+
+          ul.unroll {
+            background: #fff;
+            display: none;
+            position: absolute;
+            top: 2.5rem;
+            left: 0;
+            right: 0;
+            z-index: 3;
+            li {
+                padding: .8rem;
+            //   margin-left: 1.5rem;
+              &:hover {
+                color: $dark-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ------------------------------------- */
+/* Slider */
+/* ------------------------------------- */
+
+#section-slider {
+  min-height: 490px;
+  position: relative;
+  background: url(../img/slider/1.png) no-repeat center center/cover;
+
+  .desc {
+    background: #fff;
+    width: 50%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding-left: 10%;
+
+    p {
+      margin: 1rem 0;
+    }
+    h3 {
+      margin: 1rem 0;
+    }
+  }
+
+  .container {
+    position: relative;
+    top: 225px;
+    .arrow {
+      position: absolute;
+      right: 0;
+      color: $dark-color;
+      font-size: 4rem;
+      cursor: pointer;
+    }
+  }
+}
+
+/* ------------------------------------- */
+/* Section: stories */
+/* ------------------------------------- */
+
+#section-stories {
+  padding: 3rem 0;
+
+  h1 {
+    margin-top: 1rem;
+  }
+  .bottom-line {
+    margin-bottom: 3rem;
+  }
+
+  .stories-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+
+    .item {
+      height: 100%;
+
+      p {
+        font-weight: bold;
+      }
+      .meta {
+      }
+    }
+  }
+}
+
+/* ------------------------------------- */
+/* Section: pictures */
+/* ------------------------------------- */
+
+#section-pictures {
+  background: #f2f2f2;
+  padding: 5rem 0;
+  h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+
+    .item {
+      background: $dark-color;
+      position: relative;
+      overflow: hidden;
+
+      img {
+      }
+
+      .icon {
+        width: 2.5rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.6;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      &:hover {
+        .icon {
+          opacity: 0;
+        }
+        &::after {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+/* ------------------------------------- */
+/* Section: articles */
+/* ------------------------------------- */
+
+#section-articles {
+  padding: 2rem 0;
+
+  .content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+
+    .title-1 {
+      grid-column: 1 / span 2;
+    }
+    .title-2 {
+      grid-column: 3;
+    }
+
+    .item-1 {
+      grid-column: 1;
+    }
+    .item-2 {
+      grid-column: 2;
+    }
+    .item-3 {
+      grid-column: 1;
+    }
+    .item-4 {
+      grid-column: 2;
+    }
+    .item-5 {
+      grid-row: 2;
+    }
+    .item-6 {
+      grid-row: 3;
+    }
+    .item-7 {
+      grid-row: 4;
+    }
+
+    .item-5,
+    .item-6,
+    .item-7 {
+      grid-column: 3;
+    }
+  }
+}
+
+/* ------------------------------------- */
+/* Footer */
+/* ------------------------------------- */
+
+#main-footer {
+  background: $dark-color;
+  color: #fff;
+
+  .footer-content {
+    min-height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+
+    .links {
+      display: flex;
+
+      li {
+        a {
+          display: block;
+          padding: 0.5rem;
+          color: #fff;
+          transition: color 0.2s ease;
+
+          &:hover {
+            color: $blue-color;
+          }
+        }
+      }
+    }
+  }
+}
